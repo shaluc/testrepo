@@ -11,13 +11,12 @@ app.use(bodyParser.urlencoded({
 }));
  
 const mc = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Tejamahi@143',
-    database: 'nodeapidatabase',   
-     multipleStatements: true,
-     insecureAuth : true
-    
+        host: 'localhost',
+        user: 'root',
+        password: 'toor',
+        database: 'employeedb',   
+        multipleStatements: true,
+        insecureAuth : true
 });
 
 
@@ -68,54 +67,7 @@ app.post('/', function (req, res) {
        });
    });
     */
-   app.post('/tgtgt', function (req, res) {
-    let task = 
-    {
-        "id":req.body.id,
-        "candname":req.body.candname,  
-        "candphn":req.body.candphn,
-        "candfax":req.body.candfax,
-        "candemail":req.body.candemail,
-        "candstreet1":req.body.candstreet1,
-        "candstreet2":req.body.candstreet2,
-        "candcity":req.body.candcity,
-        "candstate":req.body.candstate,
-        "candzipcode":req.body.contzipcode,
-        "contfname":req.body.contfname,
-        "contlname":req.body.contlname,
-        "contphn":req.body.contphn,
-        "contemail":req.body.contemail,
-        "logemail":req.body.logemail,
-        "logpwd":req.body.logpwd
-    }
-    
-     console.log("task id:"+''+task.id);
-    if (!task) {
-     console.log('post api error');
-      
-    }
- 
-    mc.query("INSERT INTO candidateregform (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,)", [task.id,
-        task.candname,  
-        task.candphn,
-        task.candfax,
-        task.candemail,
-        task.candstreet1,
-        task.candstreet2,
-        task.candcity,
-        task.candstate,
-        task.contzipcode,
-        task.contfname,
-        task.contlname,
-        task.contphn,
-        task.contemail,
-        task.logemail,
-        task.logpwd
-    ], function (error, results, fields) {
-        if (error) throw error;
-        return res.send({ error: false, data: results, message: 'New task has been created successfully.' });
-    });
-});
+
 app.post('/candidate', function (req, res) {
     var postData  = req.body;
     mc.query('INSERT INTO candidateregform SET ?', postData, function (error, results, fields) {

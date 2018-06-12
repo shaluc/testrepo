@@ -1,23 +1,27 @@
 {
-  "name": "nodejsmysql",
+  "name": "testrepo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "nodejs",
-    "mysql"
-  ],
-  "author": "teja",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaluc/testrepo.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaluc/testrepo/issues"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mysql": "^2.15.0"
-  },"engines": {
+  },
+  "engines": {
     "node": "4.1.1"
   },
-
+  "homepage": "https://github.com/shaluc/testrepo#readme"
 }
